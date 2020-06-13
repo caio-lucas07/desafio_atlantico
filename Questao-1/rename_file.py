@@ -1,12 +1,14 @@
 import os
 import argparse
 
-parser = argparse.ArgumentParser(description='Process some integers.')
-parser.add_argument('integers', metavar='N', type=int, nargs='+',
-                    help='an integer for the accumulator')
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--input', metavar='i', type=str,
+                    help='pasta com arquivos')
 
 args = parser.parse_args()
-print(args)
+print(args.input)
 
 def rename(diret):
     
@@ -29,4 +31,4 @@ def rename(diret):
             print("arquivo " + name + " alterado para " + novo_nome)
         
     
-rename('./arquivos/') 
+rename(args.input) 
